@@ -5,6 +5,10 @@ import (
 	"os"
 )
 
+type ImageSource interface {
+	Open(path string) (io.ReadCloser, error)
+}
+
 type OSImageSource struct{}
 
 func (OSImageSource) Open(path string) (io.ReadCloser, error) {

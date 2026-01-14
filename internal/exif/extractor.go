@@ -33,10 +33,6 @@ const (
 	exifHeaderLength = 6
 )
 
-type ImageSource interface {
-	Open(path string) (io.ReadCloser, error)
-}
-
 type Metadata struct {
 	Make         string `json:"make"`
 	Model        string `json:"model"`
